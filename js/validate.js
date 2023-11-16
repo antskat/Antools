@@ -1,3 +1,4 @@
+// validate email
 const EMAIL_REGEXP =
   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 const email = document.querySelector(".email");
@@ -15,8 +16,10 @@ function onInput() {
 }
 
 email.addEventListener("input", onInput);
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// validate forms
 document.addEventListener("DOMContentLoaded", function () {
+  //validate register form
   const form = document.getElementById("form");
 
   form.addEventListener("submit", function (event) {
@@ -66,43 +69,37 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
       }
 
-      // Проверка на длину номера телефона
       if (input5.value.trim().length < 12) {
         input5.classList.add("error");
         return false;
       }
 
-      // Проверка на начало номера с +380
       if (!input5.value.trim().startsWith("+380")) {
         input5.classList.add("error");
         return false;
       }
 
-      // Если все проверки пройдены, разрешаем отправку формы
       return true;
     }
   });
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // validate login form
+  const lform = document.getElementById("lform");
+
+  lform.addEventListener("submit", function (event) {
+    const input11 = document.getElementById("lpassword");
+    const input22 = document.getElementById("rep-password");
+    if (input11.value !== input22.value) {
+      event.preventDefault();
+      alert("Пароли не совпадают");
+      input11.classList.add("error");
+      input22.classList.add("error");
+      return false;
+    } else {
+      input11.classList.remove("error");
+      input22.classList.remove("error");
+    }
+    return true;
+  });
 });
-
-function validateAndSubmit(event) {
-  var input11 = document.getElementById('lpassword');
-  var input22 = document.getElementById('rep-password');
-
-  if (input11.value !== input22.value) {
-    input22.classList.add('error');
-    alert('Values do not match. Please correct the input.');
-    event.preventDefault();
-  } else {
-    input22.classList.remove('error');
-  }
-}
-
-// Attach the validateInputs function to the input events of both fields
-document.getElementById('lpassword').addEventListener('input', function() {
-  document.getElementById('rep-password').classList.remove('error');
-});
-
-document.getElementById('rep-password').addEventListener('input', function() {
-  document.getElementById('rep-password').classList.remove('error');
-});
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

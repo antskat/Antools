@@ -5,7 +5,8 @@ listLikes.addEventListener("click", toggleLike);
 
 function toggleLike(event) {
   const clickedElement = event.target;
-  const isButton = clickedElement.nodeName === "BUTTON" || clickedElement.closest("button");
+  const isButton =
+    clickedElement.nodeName === "BUTTON" || clickedElement.closest("button");
 
   if (!isButton) {
     return;
@@ -20,9 +21,7 @@ function toggleLike(event) {
   }
 
   button.classList.toggle("is-check");
-  
 }
-
 
 const listLikes2 = document.querySelector(".newcomer-tools-ul");
 
@@ -30,7 +29,8 @@ listLikes2.addEventListener("click", toggleLike2);
 
 function toggleLike2(event) {
   const clickedElement = event.target;
-  const isButton = clickedElement.nodeName === "BUTTON" || clickedElement.closest("button");
+  const isButton =
+    clickedElement.nodeName === "BUTTON" || clickedElement.closest("button");
 
   if (!isButton) {
     return;
@@ -48,79 +48,84 @@ function toggleLike2(event) {
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // swiper
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// scroll to 
+// scroll to
 var design = document.getElementById("design");
 var development = document.getElementById("development");
- 
+
 function designScroll() {
-    if (design) {
-        design.scrollIntoView({ behavior: 'smooth' }, 1500);
-    } else {
-        design.scrollIntoView({ behavior: 'smooth' }, 1500);
-        console.log("no design");
-    }
-    console.log("design");
+  if (design) {
+    design.scrollIntoView({ behavior: "smooth" }, 1500);
+  } else {
+    design.scrollIntoView({ behavior: "smooth" }, 1500);
+    console.log("no design");
+  }
+  console.log("design");
 }
 function developmentScroll() {
-    if (development) {
-        development.scrollIntoView({ behavior: 'smooth' }, 1500);
-    } else {
-        development.scrollIntoView({ behavior: 'smooth' }, 1500);
-        console.log("no development");
-    }
-    console.log("development");
+  if (development) {
+    development.scrollIntoView({ behavior: "smooth" }, 1500);
+  } else {
+    development.scrollIntoView({ behavior: "smooth" }, 1500);
+    console.log("no development");
+  }
+  console.log("development");
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // dropdown
-document.getElementById("dropdown-link").addEventListener("click", function() {
+document.getElementById("dropdown-link").addEventListener("click", function () {
   document.querySelector(".dropdown").classList.toggle("active-dropdown");
   document.querySelector("#dropdown-icon").classList.toggle("rotate");
 });
+document.getElementById("acc-open").addEventListener("click", function () {
+  console.log("clicked");
+  document.querySelector(".dropdown-acc").classList.toggle("active");
+  document.querySelector("#dropdown-icon1").classList.toggle("rotate");
+});
+1;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // password visibility
-document.addEventListener("DOMContentLoaded", function() {
-  const visibilityBtn = document.getElementById("svg5");
+document.addEventListener("DOMContentLoaded", function () {
+  const visibilityBtn = document.querySelector(".svg");
   const passwordInput = document.getElementById("password");
   const paddwordShow = document.querySelector(".visibility-on");
   const passwordHide = document.querySelector(".visibility-off");
 
-  console.log(passwordInput);
 
-  visibilityBtn.addEventListener("click", function() {
+  visibilityBtn.addEventListener("click", function () {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
-      passwordHide.style.display = 'none';
-      paddwordShow.style.display = 'block';
+      passwordHide.style.display = "none";
+      paddwordShow.style.display = "block";
     } else {
       passwordInput.type = "password";
-      passwordHide.style.display = 'block';
-      paddwordShow.style.display = 'none';
+      passwordHide.style.display = "block";
+      paddwordShow.style.display = "none";
     }
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const visibilityBtn = document.getElementById("svg52");
   const passwordInput = document.getElementById("lpassword");
   const paddwordShow = document.querySelector(".lvisibility-on");
@@ -128,20 +133,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
   console.log(passwordInput);
 
-  visibilityBtn.addEventListener("click", function() {
+  visibilityBtn.addEventListener("click", function () {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
-      passwordHide.style.display = 'none';
-      paddwordShow.style.display = 'block';
+      passwordHide.style.display = "none";
+      paddwordShow.style.display = "block";
     } else {
       passwordInput.type = "password";
-      passwordHide.style.display = 'block';
-      paddwordShow.style.display = 'none';
+      passwordHide.style.display = "block";
+      paddwordShow.style.display = "none";
     }
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const visibilityBtn = document.getElementById("svg51");
   const passwordInput = document.getElementById("rep-password");
   const paddwordShow = document.querySelector(".rvisibility-on");
@@ -149,15 +154,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
   console.log(passwordInput);
 
-  visibilityBtn.addEventListener("click", function() {
+  visibilityBtn.addEventListener("click", function () {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
-      passwordHide.style.display = 'none';
-      paddwordShow.style.display = 'block';
+      passwordHide.style.display = "none";
+      paddwordShow.style.display = "block";
     } else {
       passwordInput.type = "password";
-      passwordHide.style.display = 'block';
-      paddwordShow.style.display = 'none';
+      passwordHide.style.display = "block";
+      paddwordShow.style.display = "none";
     }
   });
+});
+// loader
+document.querySelector(".leave-btn").addEventListener("click", function () {
+  document.getElementById("load-overlay").classList.add("load-active");
+  document.body.style.overflowY = "hidden";
+  setTimeout(() => {
+    window.location.href = "./index.html";
+  }, 3000);
 });

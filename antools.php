@@ -41,7 +41,7 @@ $username = $_SESSION['username'];
         <p class="text-logo">antools.</p>
       </div>
       <nav class="nav">
-        <ul class="nav-list list">
+        <ul class="nav-list list" style="left: 130px;">
           <li class="nav-list-item">
             <a class="nav-link link">Home</a>
           </li>
@@ -71,25 +71,62 @@ $username = $_SESSION['username'];
         <button style="opacity: 0; z-index: -1; cursor: auto;" id="sign-btn" type="button" disabled
           class="sign-btn">Sign Up</button>
       </div>
-      <div class="acc-acc-container">
+      <div id="acc" class="acc-acc-container">
         <div id="acc-open" class="acc-container">
           <img src="./images/account.png" alt="account avatar" width="32" height="32">
-          <svg id="dropdown-icon1" class="dropdown-icon" width="18" height="18">
+          <svg style="transition: all 0.3s;" id="dropdown-icon1" class="dropdown-icon" width="18" height="18">
             <use xlink:href="../images/icons.svg#dropdown"></use>
           </svg>
         </div>
-        <div class="dropdown-acc dropdown">
-          <img src="./images/account.png" alt="account avatar" width="28" height="28">
-          <h4 class="account-name">
-            <?php echo htmlspecialchars($username); ?>
-          </h4>
-          <button class="">View profile</button>
-          <button class="">Edit profile</button>
-          <button class="">Leave account</button>
+        <div class="dropdown-acc">
+          <div class="acc-info">
+            <img src="./images/account.png" alt="account avatar" width="28" height="28">
+            <h4 class="account-name">
+              <?php echo htmlspecialchars($username); ?>
+            </h4>
+          </div>
+          <hr class="acc-hr">
+          <button class="acc-btn">View profile</button>
+          <button id="edit-btn" class="acc-btn">Edit profile</button>
+          <button class="acc-btn leave-btn">Leave account</button>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Change popup -->
+  <div class="cpopup">
+    <button type="button" class="cclose-btn">
+      <svg width="18" height="18">
+        <use href="./images/icons.svg#closebtn"></use>
+      </svg>
+    </button>
+    <div class="popup-container">
+      <h3 class="popup-title">Edit your account</h3>
+      <form action="./php/login.php" method="POST" id="cform" name="form" class="popup-form">
+        <label for="name" class="popup-input-label">Write new name</label>
+        <svg id="svg11" class="svg" width="18" height="18">
+          <use xlink:href="../images/icons.svg#inp-icon1"></use>
+        </svg>
+        <input class="popup-input" type="text" name="cname" id="cname" />
+        <label for="password" class="popup-input-label">Write your password</label>
+        <svg id="svg43" style="top: 277px; left: 49px" class="svg" width="24" height="24">
+          <use xlink:href="../images/icons.svg#inp-icon4"></use>
+        </svg>
+        <input class="popup-input" type="password" name="cpassword" id="cpassword" />
+        <svg id="svg53" style="top: 203px; left: 529px; cursor: pointer" class="svg" width="20" height="20">
+          <use class="cvisibility-on" xlink:href="../images/icons.svg#visibility-on-icon"></use>
+          <use class="cvisibility-off" xlink:href="../images/icons.svg#visibility-off-icon"></use>
+        </svg>
+        <button style="margin-top: 30px" type="submit" name="login" class="cpopup-form-btn">
+          Edit
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
   <main>
     <section class="hero-section">
       <div class="container">
@@ -618,7 +655,11 @@ $username = $_SESSION['username'];
       </div>
     </footer>
   </main>
-  <div id="overlay-modal" class="popup-overlay"></div>
+  <div class="popup-overlay"></div>
+  <div id="load-overlay" class="load-overlay">
+    <h1 class="loader-title">Wait please..</h1>
+    <div class="loader"></div>
+  </div>
   <script src="./js/main.js"></script>
   <script src="./js/modal.js"></script>
   <script src="./js/validate.js"></script>
