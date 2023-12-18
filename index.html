@@ -78,7 +78,7 @@
       <div class="popup-container">
         <h3 class="popup-title">Register</h3>
         <form
-          action="./php/register.php"
+          action="/reg"
           method="POST"
           id="form"
           name="form"
@@ -149,7 +149,7 @@
               <a href="Policy.txt">Умови договору</a></label
             >
           </div>
-          <button type="submit" class="popup-form-btn" name="register">
+          <button id="submit" value="submit" type="submit" class="popup-form-btn" name="register">
             Send
           </button>
         </form>
@@ -979,6 +979,7 @@
       </footer>
     </main>
     <div id="overlay-modal" class="popup-overlay"></div>
+    <script src="./index.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/validate.js"></script>
